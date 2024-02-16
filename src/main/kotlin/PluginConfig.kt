@@ -33,7 +33,7 @@ object PluginConfig : ReadOnlyPluginConfig("config") {
 
     @ValueName("cooldown")
     @ValueDescription("抽老婆/换老婆命令冷却时间，单位为秒。两个命令共用一个冷却时间，设置为0或者负数时禁用冷却时间")
-    val cooldown by value(0)
+    val cooldown by value(5)
     @ValueName("cooldown-all-bots")
     @ValueDescription("是否所有机器人共用一个冷却时间组")
     val cooldownAllBots by value(true)
@@ -42,7 +42,7 @@ object PluginConfig : ReadOnlyPluginConfig("config") {
     val cooldownAllGroups by value(true)
     @ValueName("cooldown-all-members")
     @ValueDescription("是否所有群员共用一个冷却时间")
-    val cooldownAllMembers by value(true)
+    val cooldownAllMembers by value(false)
     @ValueName("cooldown-message")
     @ValueDescription("冷却中消息，\$cooldown 代表剩余秒数")
     val cooldownMessage by value("\$at 正在冷却中 (\$cooldown秒)")
@@ -93,14 +93,14 @@ object PluginConfig : ReadOnlyPluginConfig("config") {
                 "其中你的变量有 \$at \$pic \$namecard \$nick \$qq\n" +
                 "其中老婆的变量有 \$wife_at \$wife_pic \$wife_namecard \$wife_nick \$wife_qq"
     )
-    val messagesRandomWife by value(listOf("\$at 今天你的群友亲爱的是 \$wife_pic\n【\$wife_namecard】(\$wife_qq)哒！"))
+    val messagesRandomWife by value(listOf("\$at 今天你的群友亲爱的是 \$wife_pic\n【\$wife_namecard】(\$wife_qq)哒！ 主人的火影群422046057"))
 
     @ValueName("messages-change-wife")
     @ValueDescription(
         "「换老婆」的回复语句列表\n" +
                 "在抽老婆的变量基础上，旧老婆的变量有 \$old_wife_at \$old_wife_pic \$old_wife_namecard \$old_wife_nick \$old_wife_qq"
     )
-    val messagesChangeWife by value(listOf("\$at 今天你的群友亲爱的是 \$wife_pic\n【\$wife_namecard】(\$wife_qq)哒！"))
+    val messagesChangeWife by value(listOf("\$at 今天你的群友亲爱的是 \$wife_pic\n【\$wife_namecard】(\$wife_qq)哒！ 主人的火影群422046057"))
 
     @ValueName("check-gender")
     @ValueDescription("""
